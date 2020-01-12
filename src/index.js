@@ -18,4 +18,4 @@ mongoose.connect(process.env.MONGO_URI, {
 // rotas
 app.use('/api', productsRoutes);
 
-app.listen(3001);
+app.listen(process.env.PORT || 3000);
