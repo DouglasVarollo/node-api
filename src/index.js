@@ -1,9 +1,9 @@
-const cors = require('cors');
-const express = require('express');
-const mongoose = require('mongoose');
-require('dotenv').config();
+const cors = require("cors");
+const express = require("express");
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-const productsRoutes = require('./routes/products');
+const productsRoutes = require("./routes/products");
 
 // iniciando o app
 const app = express();
@@ -12,10 +12,11 @@ app.use(express.json());
 
 // iniciando o DB
 mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
 // rotas
-app.use('/api', productsRoutes);
+app.use("/api", productsRoutes);
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3333);
